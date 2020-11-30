@@ -1,8 +1,16 @@
+<!--
+    Alumna: Carmen Lorena Rangel Hernandez
+    Profesor: Octavio Aguirre Lozano
+    Materia: Computacion en el servidor web
+    Trabajo: Desarrollo Web Avanzado
+-->
+
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Nota: Bootstrap es utilizado para dar estilos a las etiquetas HTML -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title> Tienda de libros online </title>
 </head>
@@ -14,6 +22,7 @@
     </div>
 
     <?php
+    // Ejemplo de Array
     $availableBooks = array(
         'software engineering' => 1,
         'algorithms' => 3,
@@ -28,14 +37,19 @@
     );
 
     echo '<ul class="list-group">';
+    // estructura de control foreach
     foreach ($availableBooks as $book => $count) {
+        // Ejemplo de una funcion en PHP
         prettyPrint($book, $count);
     }
     echo '</ul>';
 
+    // Declaracion de la funcion
     function prettyPrint($book, $count)
     {
+        // Funcion de cadenas
         $prettyName = ucwords($book);
+        // Estructura de control if
         if ($count <= 0) {
             $color = 'red';
         } else {
