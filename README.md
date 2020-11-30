@@ -13,3 +13,5 @@ Trabajo a futuro:
 Como usar?
 
 Copiar index.php en la carpeta de un servidor php, como htdocs.
+
+![Alt text](/Capture.PNG "Vista de la aplicacion actual")
