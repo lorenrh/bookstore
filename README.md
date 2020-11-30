@@ -9,3 +9,7 @@ Trabajo a futuro:
 - Agregar funciones de creacion, actualizacion y borrado de libros
 - usuarios para los compradores frecuentes
 - Manual de instalacion.
+
+Como usar?
+
+Copiar index.php en la carpeta de un servidor php, como htdocs.
