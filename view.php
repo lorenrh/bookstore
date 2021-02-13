@@ -2,7 +2,7 @@
     Alumna: Carmen Lorena Rangel Hernandez
     Profesor: Octavio Aguirre Lozano
     Materia: Computacion en el servidor web
-    Trabajo: Desarrollo Web Avanzado
+    Laboratorio #1: Manejo de datos en el servidor e interacción con el cliente mediante una aplicación web
 -->
 
 <html>
@@ -22,43 +22,32 @@
     </div>
 
     <?php
-    // Ejemplo de Array
-    $availableBooks = array(
-        'software engineering' => 1,
-        'algorithms' => 3,
-        'discrete and combinatorial mathematics' => -1,
-        'the mythical man month' => 2,
-        'do androids dream of electric sheep?' => 0,
-        'inspired' => 7,
-        'code' => 1,
-        'neuromancer' => 0,
-        'pattern classification' => 5,
-        '1984' => 10,
-    );
-
     echo '<ul class="list-group">';
     // estructura de control foreach
-    foreach ($availableBooks as $book => $count) {
+    foreach ($availableBooks as $book) {
         // Ejemplo de una funcion en PHP
-        prettyPrint($book, $count);
+        prettyPrint($book);
     }
     echo '</ul>';
 
     // Declaracion de la funcion
-    function prettyPrint($book, $count)
+    function prettyPrint($book)
     {
         // Funcion de cadenas
-        $prettyName = ucwords($book);
+        $prettyName = ucwords($book->title);
         // Estructura de control if
-        if ($count <= 0) {
+        if ($book->quantity <= 0) {
             $color = 'red';
         } else {
             $color = 'green';
         }
-        echo '<li class="list-group-item" style="color:' . $color . ';">' . $prettyName . ', ' . $count . '</li>';
+        echo '<li class="list-group-item" style="color:' . $color . ';">' . $prettyName . ', ' . $book->author . ', ' . $book->quantity . '</li>';
     }
-
     ?>
+
+    <form action="form.php" method="post">
+        <input type="submit" value=" Agregar un libro" />
+    </form>
 
 </body>
 
