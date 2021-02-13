@@ -48,8 +48,9 @@
         echo '
             <li class="list-group-item" style="color:' . $color . ';">
             ' . $prettyName . ', ' . $book->author . ', ' . $book->quantity . '
-            <form action="model.php" method="post">
-                <input type="submit" name="edit" value=" Editar" />
+            <form action="view/updateForm.php" method="post">
+                <input type="submit" name="edit" value=" Editar " />
+                <input type="hidden" name="id" value="'. $book->id .'">
             </form>
             <form method="post">
                 <input type="submit" name="delete" value=" Borrar" />
@@ -57,8 +58,8 @@
             </li>';
     }
     ?>
-
-    <form action="insertForm.php" method="post">
+    <!-- boton para agregar un libro -->
+    <form action="view/insertForm.php" method="post">
         <input type="submit" value=" Agregar un libro" />
     </form>
 

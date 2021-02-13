@@ -5,12 +5,16 @@
     Laboratorio #1: Manejo de datos en el servidor e interacción con el cliente mediante una aplicación web
 -->
 
+<!-- punto de entrada de la applicacion
+deberia ser index.html, pero se llamo
+controller para mejor comporension del mcv -->
+
 <?php
-// Include the model
+// incluir el modelo
 require_once('model.php');
-// get the data
+// obtener los datos
 $b = new Books();
 $availableBooks =  $b->getAllBooks();
-// Include the view
-require('view.php');
+// Incluir la vista
+require('view/view.php');
 ?>
