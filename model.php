@@ -63,15 +63,27 @@ class Books
 
     function addBook($book)
     {
-        $query  = "INSERT INTO library (Title, Author, Quantity) VALUES (' . $book->title . ',' . $book->author . ',' . $book->quantity .')";
+        $query  = "INSERT INTO ". $this->db ." (Title, Author, Quantity) VALUES (' $book->title','$book->author','$book->quantity')";
         $result = $this->cn->query($query);
-        $db = "library";
         if (!$result) {
             echo   $this->cn->error;
             die("Error getting the database");
         } else {
             echo "db updated";
-            // header("Location: http://localhost/bookstore/controller.php");
+            header("Location: http://localhost/bookstore/controller.php");
+        }
+    }
+
+    function deleteBook($book)
+    {
+        $query  = "DELETE FROM ". $this->db ." WHERE id=".$book->id;
+        $result = $this->cn->query($query);
+        if (!$result) {
+            echo   $this->cn->error;
+            die("Error getting the database");
+        } else {
+            echo "db updated";
+            header("Location: http://localhost/bookstore/controller.php");
         }
     }
 }

@@ -30,6 +30,10 @@
     }
     echo '</ul>';
 
+    if(isset($_POST['delete'])) { 
+        $b->deleteBook($book);
+    } 
+
     // Declaracion de la funcion
     function prettyPrint($book)
     {
@@ -41,11 +45,20 @@
         } else {
             $color = 'green';
         }
-        echo '<li class="list-group-item" style="color:' . $color . ';">' . $prettyName . ', ' . $book->author . ', ' . $book->quantity . '</li>';
+        echo '
+            <li class="list-group-item" style="color:' . $color . ';">
+            ' . $prettyName . ', ' . $book->author . ', ' . $book->quantity . '
+            <form action="model.php" method="post">
+                <input type="submit" name="edit" value=" Editar" />
+            </form>
+            <form method="post">
+                <input type="submit" name="delete" value=" Borrar" />
+            </form>
+            </li>';
     }
     ?>
 
-    <form action="form.php" method="post">
+    <form action="insertForm.php" method="post">
         <input type="submit" value=" Agregar un libro" />
     </form>
 
